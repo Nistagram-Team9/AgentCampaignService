@@ -47,7 +47,7 @@ public class CampaignService {
 	}
 
 	public void createCampaign(MultipartFile[] files, List<String> websites, Boolean isShortTerm, String startDate,
-			String endDate, Integer howManyTimesADay, String sex, String ageGroup) throws ImageStorageException {
+			String endDate, Integer howManyTimesADay, String sex, String ageGroup) throws Exception {
 		User user = (User) userRepository
 				.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
 		Campaign campaign = campaignRepository.save(new Campaign(null, new ArrayList<>(), isShortTerm, startDate,

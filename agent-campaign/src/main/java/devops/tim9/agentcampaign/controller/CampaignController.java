@@ -37,7 +37,7 @@ public class CampaignController {
 	public ResponseEntity<MessageDto> createCampaign(@RequestParam("files") MultipartFile[] files,
 			@RequestParam List<String> websites, @RequestParam Boolean isShortTerm, @RequestParam String startDate,
 			@RequestParam String endDate, @RequestParam Integer howManyTimesADay, @RequestParam String sex,
-			@RequestParam String ageGroup) throws ImageStorageException {
+			@RequestParam String ageGroup) throws Exception {
 		campaignService.createCampaign(files, websites, isShortTerm, startDate, endDate, howManyTimesADay, sex,
 				ageGroup);
 		return new ResponseEntity<>(new MessageDto("Success", "Campaign is successfully created."), HttpStatus.CREATED);
